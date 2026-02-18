@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+const withOpacity = (variable: string) => `rgb(var(${variable}) / <alpha-value>)`
+
 const config: Config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,15 +11,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: '#FDFDFC',
-        surface: '#F8F8F6',
-        grid: '#E8E8E3',
+        paper: withOpacity('--paper'),
+        surface: withOpacity('--surface'),
+        grid: withOpacity('--grid'),
         ink: {
-          primary: '#121212',
-          secondary: '#666660',
+          primary: withOpacity('--ink-primary'),
+          secondary: withOpacity('--ink-secondary'),
         },
         accent: {
-          live: '#10B981',
+          live: withOpacity('--accent-live'),
+        },
+        footer: {
+          bg: withOpacity('--footer-bg'),
+          fg: withOpacity('--footer-fg'),
         },
       },
       fontFamily: {

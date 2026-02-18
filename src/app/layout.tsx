@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 
+import { SmoothScroll } from '@/components/atoms/SmoothScroll'
+
 import './globals.css'
 
 const inter = Inter({
@@ -36,8 +38,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html className="bg-paper" lang="en">
+    <html className="bg-paper" data-theme="light" lang="en">
       <body className={`${inter.variable} ${jetBrainsMono.variable} font-sans text-[14px] leading-relaxed text-ink-primary antialiased`}>
+        <SmoothScroll />
         {children}
       </body>
     </html>

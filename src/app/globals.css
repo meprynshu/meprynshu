@@ -3,12 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --paper: #fdfdfc;
-  --surface: #f8f8f6;
-  --ink-primary: #121212;
-  --ink-secondary: #666660;
-  --grid: #e8e8e3;
-  --accent-live: #10b981;
+  --paper: 253 253 252;
+  --surface: 248 248 246;
+  --ink-primary: 18 18 18;
+  --ink-secondary: 102 102 96;
+  --grid: 232 232 227;
+  --accent-live: 16 185 129;
+  --footer-bg: 18 18 18;
+  --footer-fg: 250 250 250;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --paper: 11 13 15;
+  --surface: 18 21 24;
+  --ink-primary: 234 237 240;
+  --ink-secondary: 150 157 166;
+  --grid: 42 47 54;
+  --accent-live: 52 211 153;
+  --footer-bg: 5 7 9;
+  --footer-fg: 237 241 244;
+  color-scheme: dark;
 }
 
 * ,
@@ -21,10 +36,23 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--paper);
-  color: var(--ink-primary);
+  background: rgb(var(--paper));
+  color: rgb(var(--ink-primary));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 a {
@@ -34,12 +62,12 @@ a {
 
 @layer components {
   .crafty-btn {
-    @apply inline-flex items-center gap-2 border border-ink-primary bg-white px-4 py-2 font-mono text-xs text-ink-primary transition-all duration-150 ease-out;
-    box-shadow: 3px 3px 0 0 #e8e8e3;
+    @apply inline-flex items-center gap-2 border border-ink-primary bg-paper px-4 py-2 font-mono text-xs text-ink-primary transition-all duration-150 ease-out;
+    box-shadow: 3px 3px 0 0 rgb(var(--grid));
   }
 
   .crafty-btn:hover {
-    box-shadow: 5px 5px 0 0 #121212;
+    box-shadow: 5px 5px 0 0 rgb(var(--ink-primary));
     transform: translate(-2px, -2px);
   }
 
@@ -49,11 +77,11 @@ a {
   }
 
   .crafty-btn-inverted {
-    @apply border-white bg-ink-primary text-white;
-    box-shadow: 3px 3px 0 0 #666660;
+    @apply border-footer-fg bg-transparent text-footer-fg;
+    box-shadow: 3px 3px 0 0 rgb(var(--ink-secondary));
   }
 
   .crafty-btn-inverted:hover {
-    box-shadow: 5px 5px 0 0 #ffffff;
+    box-shadow: 5px 5px 0 0 rgb(var(--footer-fg));
   }
 }
