@@ -34,3 +34,12 @@ export interface ContactLink {
   label: string
   href: string
 }
+
+export interface Project {
+  id: string
+  name: string
+  href: string
+  summary: string
+  signal: string
+  tags: string[]
+}

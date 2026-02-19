@@ -3,6 +3,12 @@
 import Lenis from 'lenis'
 import { useEffect } from 'react'
 
+declare global {
+  interface Window {
+    __lenis?: Lenis
+  }
+}
+
 export function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -15,6 +21,7 @@ export function SmoothScroll() {
       wheelMultiplier: 0.9,
       touchMultiplier: 1.15,
     })
+    window.__lenis = lenis
 
     let frameId = 0
 
@@ -27,6 +34,7 @@ export function SmoothScroll() {
 
     return () => {
       window.cancelAnimationFrame(frameId)
+      delete window.__lenis
       lenis.destroy()
     }
   }, [])

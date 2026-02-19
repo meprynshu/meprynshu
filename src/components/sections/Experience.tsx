@@ -36,8 +36,8 @@ function renderHighlightedText(text: string, terms: string[]) {
 
 export function Experience() {
   return (
-    <section className="border-b border-grid">
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
+    <section className="border-b border-grid" id="experience">
+      <div className="mx-auto max-w-5xl px-4 md:px-8">
         <div className="grid grid-cols-1 border-b border-grid md:grid-cols-12">
           <div className="col-span-1 border-b border-grid p-4 md:col-span-2 md:border-b-0 md:border-r md:p-6">
             <Label>Work Ledger</Label>

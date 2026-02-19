@@ -3,8 +3,8 @@ import { EDUCATION, SKILLS } from '@/data/content'
 
 export function SkillStack() {
   return (
-    <section className="border-b border-grid">
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
+    <section className="border-b border-grid" id="skills">
+      <div className="mx-auto max-w-5xl px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="col-span-1 border-b border-grid py-8 md:col-span-4 md:border-b-0 md:border-r md:py-10">
             <Label>Technical Infrastructure</Label>
