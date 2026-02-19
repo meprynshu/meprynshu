@@ -1,6 +1,7 @@
 import { Github, Linkedin, MapPin, Twitter } from 'lucide-react'
 import Image from 'next/image'
 
+import { TypewriterText } from '@/components/atoms/TypewriterText'
 import { IDENTITY, SOCIAL_LINKS } from '@/data/content'
 
 export function Hero() {
@@ -13,7 +14,7 @@ export function Hero() {
               {IDENTITY.name}
             </h1>
             <p className="mt-3 font-sans text-sm tracking-tight text-ink-secondary md:text-base">
-              {IDENTITY.role}
+              <TypewriterText text={IDENTITY.role} />
             </p>
 
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-ink-primary md:text-base">
